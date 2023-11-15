@@ -1,18 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
 import { Listado } from './components/listado';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog, faHome, faUsers, faEnvelope, faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faHome, faUsers, faEnvelope, faCalendar, faBell, faUser, faUserSecret, faUserNinja, faUserTie, faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
+import Desafios from './components/desafios';
 
 
 function App() {
   const [logeado, setLogeado] = useState(true);
   const [nuevoEquipo, setNuevoEquipo] = useState({});
   const [equipos, setEquipos] = useState([
-    { "titulo": "frd delta" },
-    { "titulo": "utn buenos aires" },
+    { "titulo": "Siderca FC" },
+    { "titulo": "UTN Delta Primero" },
+    { "titulo": "Patronato JRS" },
+    { "titulo": "La banda FC" },
+    { "titulo": "CA Metegol" },
+    { "titulo": "Sacachispas" },
+    { "titulo": "Tercero Sistemas" },
+    { "titulo": "Mitre" },
+    { "titulo": "BJR FC" },
+    { "titulo": "Quinto Mecanica" },
+    { "titulo": "UTN Pacheco" }
   ]);
+
+  const [mostrarDesafios, setMostrarDesafios] = useState(false);
 
   const desafiarEquipo = (equipo) => {
     // Lógica para manejar el desafío del equipo
@@ -31,11 +43,13 @@ function App() {
         {/* Barra lateral */}
         <div className="sidebar">
           <ul>
-            <li> <FontAwesomeIcon icon={faCog}/> </li>
+            <li><FontAwesomeIcon icon={faUser} /> </li>
             <li><FontAwesomeIcon icon={faHome} /> </li>
             <li><FontAwesomeIcon icon={faUsers} /> </li>
             <li><FontAwesomeIcon icon={faEnvelope} /> </li>
             <li><FontAwesomeIcon icon={faCalendar} /> </li>
+            <li><FontAwesomeIcon icon={faBell} /> </li>
+            <li  style={{ marginTop: '220px' }}> <FontAwesomeIcon icon={faCog}/> </li>
           </ul>
         </div>
 
@@ -47,7 +61,9 @@ function App() {
           </div>
 
           <button className="verpartidos-button">VER PARTIDOS</button>
-          <button className="verdesafios-button">VER DESAFIOS</button>
+          <button className="verdesafios-button" onClick={() => setMostrarDesafios(true)}>VER DESAFIOS</button>
+
+          {mostrarDesafios && <Desafios equipos={equipos} onClose={() => setMostrarDesafios(false)} />}
 
           <div className="buscar-rival">
             Buscar rival <input />
@@ -60,6 +76,15 @@ function App() {
                 <div key={index} className="carta-equipo">
                   <div style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '10px' }}>{equipo.titulo}</div>
 
+                {/* Iconos de jugadores */}
+                <div className="jugadores-icons" style={{ marginTop: '2px' }}>
+                  <FontAwesomeIcon icon={faUser} style={{ marginRight: '5px' }} />
+                  <FontAwesomeIcon icon={faUserSecret} style={{ marginRight: '5px' }}/>
+                  <FontAwesomeIcon icon={faUserNinja} style={{ marginRight: '5px' }} />
+                  <FontAwesomeIcon icon={faUserTie} style={{ marginRight: '5px' }}/>
+                  <FontAwesomeIcon icon={faUserAstronaut} style={{ marginRight: '5px' }}/>
+                </div>
+                    
                   <button
                     className="desafiar-button"
                     onClick={() => alert("Tu solicitud de desafío ha sido enviada con éxito!")}
