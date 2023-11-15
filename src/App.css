@@ -1,10 +1,225 @@
 .App {
   text-align: center;
+  margin: 20px;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 10vh; /* Ocupa el 100% de la altura de la ventana */
+}
+
+.logo {
+  width: 500px; /* Ajusta según sea necesario */
+  height: auto; /* Mantén la proporción del logo */
+  margin-top: 50px;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 20px; /* Ajusta el ancho de la barra lateral según tus preferencias */
+  background-color: #ffffff; /* Color de fondo de la barra lateral */
+  color: #fff; /* Color del texto en la barra lateral */
+  padding: 15px; /* Ajusta el relleno según tus preferencias */
+}
+
+.sidebar ul li {
+  display: flex;
+  align-items: center; /* Alinea íconos y texto verticalmente */
+  margin-bottom: 50px;
+}
+
+.sidebar ul li svg {
+  margin-right: 10px; /* Ajusta el espacio entre íconos y texto según tus preferencias */
+  color: #696766;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px; /* Ajusta el relleno según tus preferencias */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  background-color: #045808; /* Color de fondo  */
+}
+
+h1 {
+  font-size: 2em; /* Ajusta el tamaño del texto según tus preferencias */
+  font-weight: bold;
+  font-family: 'Arial', sans-serif; /* Cambia 'OtraFuenteDestacada' por el nombre de la fuente que prefieras */
+  color: #000000; /* Color verde oscuro */
+}
+
+.verdesafios-button {
+  background-color: #232925; /* Color para los botones */
+  color: #fff; /* Texto en los botones */
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: fixed;
+  top: 7%; /* Ajusta la distancia desde la parte superior  */
+  right: 10px; /* Ajusta la distancia desde la derecha  */
+}
+
+.verpartidos-button {
+  background-color: #232925; /* Color para los botones */
+  color: #fff; /* Texto en los botones */
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: fixed;
+  top: 1%; /* Ajusta la distancia desde la parte superior */
+  right: 10px; /* Ajusta la distancia desde la derecha   */
+}
+
+.desafiar-button {
+  background-color: #232925; /* Color para los botones */
+  color: #fff; /* Texto en los botones */
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.buscar-rival {
+  color: #878b89;
+  margin-top: 40px;
+  padding: 10px; 
+  border: 1px solid #8b8787; 
+  border-radius: 5px; 
+  background-color: #282e2a; 
+}
+
+.buscar-rival input{
+  width: 80%;
+  margin-top: 10px;
+  padding: 10px; 
+  border: 1px solid #8b8787; 
+  border-radius: 5px; 
+  background-color: #666363; 
+}
+
+
+.crear-button{
+  background-color: #232925; /* Color para los botones */
+  color: #fff; /* Texto en los botones */
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input {
+  background-color: #474e4a;
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid #1a472a; /* Borde para los inputs */
+  border-radius: 5px;
+}
+
+.Listado {
+  margin-top: 20px;
+  border: 1px solid #1a472a; /* Borde para la lista */
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.Listado-item {
+  border-bottom: 1px solid #1a472a; /* Borde inferior para los elementos de la lista */
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.equipos-disponibles {
+  margin-top: 40px;
+  width: 100%; 
+  background-color: #282e2a; 
+  color: #fff; 
+  padding: 10px; 
+  border-radius: 5px; 
+  box-sizing: border-box;
+  border: 1px solid #8b8787;
+  min-height: 100px;
+}
+
+h2 {
+  margin: 0; /* Elimina el margen predeterminado del h2 */
+}
+
+.equipos-disponibles ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.equipos-disponibles li {
+  background-color: #ffffff;
+  color: #fff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.equipos-disponibles h2 {
+  text-align: center;
+}
+
+
+.cartas-equipos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.carta-equipo { 
+  background-color: #0e4421;
+  color: #fff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 150px; 
+  height: 120px; 
+  margin: 10px; 
+}
+
+.nuevo-equipo {
+  margin: 20px auto;
+}
+
+/* Estilo para el mensaje de no logeado */
+.no-logeado {
+  color: #d9534f; /* Color para el mensaje de no logeado */
+  margin-top: 20px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,26 +228,3 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

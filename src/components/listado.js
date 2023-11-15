@@ -1,7 +1,7 @@
 export function Listado(params) {
    return (
     <div>
-       <h1>{params.titulo}</h1>
+       <h2>{params.titulo}</h2>
        {params.data.map(data => {
         return (
             <div>
